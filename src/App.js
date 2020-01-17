@@ -1,6 +1,18 @@
 import React from 'react';
+import { 
+  BrowserRouter as Router,
+  Switch,
+  Route, 
+  Link } from "react-router-dom";
+
+
 import logo from './logo.svg';
 import './App.css';
+import ListQueue from './Queue/ListQueue.js';
+import DetailQUeue from './Queue/DetailQueue.js';
+import AddJob from './Queue/AddJob.js';
+import ReSubmitJob from './Queue/ReSubmitJob.js';
+
 
 function App() {
   return (
