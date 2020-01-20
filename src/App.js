@@ -16,22 +16,41 @@ import ReSubmitJob from './Queue/ReSubmitJob.js';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+    <header class="navbar navbar-expand navbar-dark fixed-top bg-dark">
+      <a class="navbar-brand" href="#">Job Manager</a>
+      <div class="ml-auto order-lg-last">
+        <ul class="navbar-nav flex-row">
+          <li class="nav-item pr-3 pr-lg-0">
+              <a class="nav-link" href="/">Home</a>
+          </li>
+          <li class="nav-item pr-3 pr-lg-0">
+              <a class="nav-link" href="/detailqueue">Detail</a>
+          </li>
+          <li class="nav-item pr-3 pr-lg-0">
+              <a class="nav-link" href="/addjob">Add</a>
+          </li>
+          <li class="nav-item pr-3 pr-lg-0">
+            <a class="nav-link" href="/resubmitjob">Resubmit</a>
+          </li>
+        </ul>
+      </div>
+    </header>
+    <Switch>
+      <Route exact path="/">
+          <ListQueue />
+      </Route>
+      <Route path="/detailqueue">
+          <DetailQUeue />
+      </Route>
+      <Route path="/addjob">
+          <AddJob />
+      </Route>
+      <Route path="/resubmitjob">
+          <ReSubmitJob />
+      </Route>
+    </Switch>
+  </Router>
   );
 }
 
