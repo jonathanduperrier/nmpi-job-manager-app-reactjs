@@ -17,21 +17,21 @@ import ReSubmitJob from './Queue/ReSubmitJob.js';
 function App() {
   return (
     <Router>
-    <header class="navbar navbar-expand navbar-dark fixed-top bg-dark">
-      <a class="navbar-brand" href="#">Job Manager</a>
-      <div class="ml-auto order-lg-last">
-        <ul class="navbar-nav flex-row">
-          <li class="nav-item pr-3 pr-lg-0">
-              <a class="nav-link" href="/">Home</a>
+    <header className="navbar navbar-expand navbar-dark fixed-top bg-dark">
+      <a className="navbar-brand" href="#">Job Manager</a>
+      <div className="ml-auto order-lg-last">
+        <ul className="navbar-nav flex-row">
+          <li className="nav-item pr-3 pr-lg-0">
+              <a className="nav-link" href="/">Home</a>
           </li>
-          <li class="nav-item pr-3 pr-lg-0">
-              <a class="nav-link" href="/detailqueue">Detail</a>
+          <li className="nav-item pr-3 pr-lg-0">
+              <a className="nav-link" href="/detailqueue">Detail</a>
           </li>
-          <li class="nav-item pr-3 pr-lg-0">
-              <a class="nav-link" href="/addjob">Add</a>
+          <li className="nav-item pr-3 pr-lg-0">
+              <a className="nav-link" href="/addjob">Add</a>
           </li>
-          <li class="nav-item pr-3 pr-lg-0">
-            <a class="nav-link" href="/resubmitjob">Resubmit</a>
+          <li className="nav-item pr-3 pr-lg-0">
+            <a className="nav-link" href="/resubmitjob">Resubmit</a>
           </li>
         </ul>
       </div>
