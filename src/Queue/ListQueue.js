@@ -13,7 +13,8 @@ class ListQueue extends Component {
     super(props)
 
     this.state = {
-      jobs: []
+      jobs: [],
+      error
     }
   }
   componentDidMount(){
@@ -24,17 +25,22 @@ class ListQueue extends Component {
     })
     .catch(error => {
       console.log(error)
+      this.setState({errorMsg: 'Error retreiving data'})
     })
   }
 
 
   render() {
+    const { jobs } = this.state
     return (
       <div>
-        <h2>List Queue</h2>
-        <div className="container-fluid">
-
-        </div>
+        <h2>List Queue of jobs</h2>
+        {
+          jobs.length ?
+          jobs.map(post => <div key={post.collab_id}>{post.id}</div>)
+          null
+        }
+        
       </div>
     )
   };
