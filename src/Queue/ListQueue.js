@@ -14,14 +14,14 @@ class ListQueue extends Component {
 
     this.state = {
       jobs: [],
-      error
+      error: '',
     }
   }
   componentDidMount(){
     axios.get('https://raw.githubusercontent.com/jonathanduperrier/nmpi-job-manager-app-reactjs/master/db.json')
     .then(response => {
       console.log(response)
-      this.setState({jobs: response.data})
+      this.setState({jobs: response.data.objects})
     })
     .catch(error => {
       console.log(error)
@@ -31,16 +31,35 @@ class ListQueue extends Component {
 
 
   render() {
-    const { jobs } = this.state
+    //const { jobs } = this.state
     return (
       <div>
         <h2>List Queue of jobs</h2>
+        <div class="row-fluid">
+          <div class="col-md-12">
+            <table class="table table-striped table-condensed">
+              <thead>
+                  <tr>
+                      <th>
+                          <a class="glyphicon glyphicon-plus-sign" href="" ></a>
+                          <a class="glyphicon glyphicon-plus-sign" href="" onclick="alert('You have to be within an HBP Collaboratory to submit a new job.')"></a>
+                      </th>
+                      <th>ID</th>
+                      <th>Status</th>
+                      <th>System</th>
+                      <th>Code</th>
+                      <th ng-show="!with_ctx">Collab</th>
+                      <th>Submitted on</th>
+                      <th>Submitted by</th>
+                  </tr>
+              </thead>
+            </table>
+          </div>
+          
         {
-          jobs.length ?
-          jobs.map(post => <div key={post.collab_id}>{post.id}</div>)
-          //null
+          this.state.jobs.map(job => <div>{job.collab_id} - {job.hardware_platform}</div>)
         }
-        
+        </div>
       </div>
     )
   };
