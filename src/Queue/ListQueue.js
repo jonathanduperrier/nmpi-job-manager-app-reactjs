@@ -53,12 +53,23 @@ class ListQueue extends Component {
                       <th>Submitted by</th>
                   </tr>
               </thead>
+              <tbody>
+                {
+                  this.state.jobs.map(job => 
+                  <tr>
+                    <td></td>
+                    <td>{job.collab_id}</td>
+                    <td><span>{job.status}</span></td>
+                    <td>{job.hardware_platform}</td>
+                    <td><code>{job.code}</code></td>
+                    <td>{job.collab}</td>
+                    <td>{job.timestamp_submission}</td>
+                    <td>{job.user}</td>
+                  </tr>)
+                }
+              </tbody>
             </table>
           </div>
-          
-        {
-          this.state.jobs.map(job => <div>{job.collab_id} - {job.hardware_platform}</div>)
-        }
         </div>
       </div>
     )
