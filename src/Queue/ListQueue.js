@@ -38,7 +38,7 @@ class ListQueue extends Component {
         {
           jobs.length ?
           jobs.map(post => <div key={post.collab_id}>{post.id}</div>)
-          null
+          //null
         }
         
       </div>
