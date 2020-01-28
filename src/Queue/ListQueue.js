@@ -11,17 +11,23 @@ class ListQueue extends Component {
 
   constructor(props) {
     super(props)
-
+  
     this.state = {
       jobs: [],
       error: '',
     }
+    //console.log("job.code : " + this.state.jobs.code);
   }
   componentDidMount(){
     axios.get('https://raw.githubusercontent.com/jonathanduperrier/nmpi-job-manager-app-reactjs/master/db.json')
     .then(response => {
-      console.log(response)
-      this.setState({jobs: response.data.objects})
+      console.log(response);
+      this.setState({jobs: response.data.objects});
+      var mydate = new Date(response.data.objects.date);
+      var date = mydate.toString("jj/MM/yyyy");
+      console.log("date : " + date);
+      this.setState({date: date});
+  
     })
     .catch(error => {
       console.log(error)
@@ -35,14 +41,14 @@ class ListQueue extends Component {
     return (
       <div>
         <h2>List Queue of jobs</h2>
-        <div class="row-fluid">
-          <div class="col-md-12">
-            <table class="table table-striped table-condensed">
+        <div className="row-fluid">
+          <div className="col-md-12">
+            <table className="table table-striped table-condensed">
               <thead>
                   <tr>
                       <th>
-                          <a class="glyphicon glyphicon-plus-sign" href="" ></a>
-                          <a class="glyphicon glyphicon-plus-sign" href="" onclick="alert('You have to be within an HBP Collaboratory to submit a new job.')"></a>
+                          <a className="glyphicon glyphicon-plus-sign" aria-hidden="true" href="" ></a>
+                          <a className="glyphicon glyphicon-plus-sign" aria-hidden="true" href="" onClick="alert('You have to be within an HBP Collaboratory to submit a new job.')"></a>
                       </th>
                       <th>ID</th>
                       <th>Status</th>
@@ -59,9 +65,9 @@ class ListQueue extends Component {
                   <tr>
                     <td></td>
                     <td>{job.collab_id}</td>
-                    <td><span>{job.status}</span></td>
+                    <td><span className="label label-success">{job.status}</span></td>
                     <td>{job.hardware_platform}</td>
-                    <td><code>{job.code}</code></td>
+                    <td><code>{job.code.substring(0,77) + "..."}</code></td>
                     <td>{job.collab}</td>
                     <td>{job.timestamp_submission}</td>
                     <td>{job.user}</td>
