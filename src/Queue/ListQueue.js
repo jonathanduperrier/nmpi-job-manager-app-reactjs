@@ -49,7 +49,7 @@ class ListQueue extends Component {
               <thead>
                   <tr>
                       <th>
-                          <a aria-hidden="true" href="" ><MdAddCircle /></a>
+                          <a aria-hidden="true" href="/addjob" ><MdAddCircle /></a>
                           <a aria-hidden="true" href="" onClick="alert('You have to be within an HBP Collaboratory to submit a new job.')"></a>
                       </th>
                       <th>ID</th>
@@ -67,7 +67,7 @@ class ListQueue extends Component {
                   <tr>
                     <td><a aria-hidden="true" href="" ><MdSearch /></a></td>
                     <td>{job.collab_id}</td>
-                    <td><span className="badge badge-success">{job.status}</span></td>
+                    <td><span className={job.status == 'finished' ? 'badge badge-success' : 'badge badge-danger'}>{job.status}</span></td>
                     <td>{job.hardware_platform}</td>
                     <td><code>{job.code.substring(0,77) + "..."}</code></td>
                     <td>{job.collab}</td>
