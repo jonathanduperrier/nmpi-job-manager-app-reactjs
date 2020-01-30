@@ -1,5 +1,7 @@
 import React, {Component, useImperativeHandle} from 'react';
 import axios from 'axios';
+//import 'react-icons/fa';
+import {MdSearch, MdAddCircle} from 'react-icons/md';
 
 import { 
     BrowserRouter as Router,
@@ -47,8 +49,8 @@ class ListQueue extends Component {
               <thead>
                   <tr>
                       <th>
-                          <a className="glyphicon glyphicon-plus-sign" aria-hidden="true" href="" ></a>
-                          <a className="glyphicon glyphicon-plus-sign" aria-hidden="true" href="" onClick="alert('You have to be within an HBP Collaboratory to submit a new job.')"></a>
+                          <a aria-hidden="true" href="" ><MdAddCircle /></a>
+                          <a aria-hidden="true" href="" onClick="alert('You have to be within an HBP Collaboratory to submit a new job.')"></a>
                       </th>
                       <th>ID</th>
                       <th>Status</th>
@@ -63,9 +65,9 @@ class ListQueue extends Component {
                 {
                   this.state.jobs.map(job => 
                   <tr>
-                    <td></td>
+                    <td><a aria-hidden="true" href="" ><MdSearch /></a></td>
                     <td>{job.collab_id}</td>
-                    <td><span className="label label-success">{job.status}</span></td>
+                    <td><span className="badge badge-success">{job.status}</span></td>
                     <td>{job.hardware_platform}</td>
                     <td><code>{job.code.substring(0,77) + "..."}</code></td>
                     <td>{job.collab}</td>
