@@ -65,14 +65,14 @@ class ListQueue extends Component {
                 {
                   this.state.jobs.map(job => 
                   <tr>
-                    <td><a aria-hidden="true" href="" ><MdSearch /></a></td>
-                    <td>{job.collab_id}</td>
+                    <td><a aria-hidden="true" href="/detailqueue/" ><MdSearch /></a></td>
+                    <td>{job.id}</td>
                     <td><span className={job.status == 'finished' ? 'badge badge-success' : 'badge badge-danger'}>{job.status}</span></td>
                     <td>{job.hardware_platform}</td>
                     <td><code>{job.code.substring(0,77) + "..."}</code></td>
-                    <td>{job.collab}</td>
+                    <td>{job.collab_id}</td>
                     <td>{job.timestamp_submission}</td>
-                    <td>{job.user}</td>
+                    <td>{job.user_id}</td>
                   </tr>)
                 }
               </tbody>

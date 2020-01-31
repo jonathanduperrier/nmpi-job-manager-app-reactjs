@@ -40,7 +40,7 @@ function App() {
       <Route exact path="/">
           <ListQueue />
       </Route>
-      <Route path="/detailqueue">
+      <Route path="/detailqueue/:id">
           <DetailQUeue />
       </Route>
       <Route path="/addjob">
