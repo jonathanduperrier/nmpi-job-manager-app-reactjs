@@ -65,7 +65,7 @@ class ListQueue extends Component {
                 {
                   this.state.jobs.map(job => 
                   <tr>
-                    <td><a aria-hidden="true" href="/detailqueue/" ><MdSearch /></a></td>
+                    <td><Link to={'/detailqueue/' + job.id}><MdSearch /></Link></td>
                     <td>{job.id}</td>
                     <td><span className={job.status == 'finished' ? 'badge badge-success' : 'badge badge-danger'}>{job.status}</span></td>
                     <td>{job.hardware_platform}</td>
