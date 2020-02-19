@@ -29,7 +29,6 @@ class ListQueue extends Component {
       var date = mydate.toString("jj/MM/yyyy");
       console.log("date : " + date);
       this.setState({date: date});
-  
     })
     .catch(error => {
       console.log(error)
