@@ -14,6 +14,7 @@ function DetailQueue() {
   axios.get('https://raw.githubusercontent.com/jonathanduperrier/nmpi-job-manager-app-reactjs/master/db_' + id + '.json')
   .then(response => {
     console.log(response.data.objects[0]);
+    
     //this.setState({job: response.data.objects[0]});
     // var mydate = new Date(response.data.objects.date);
     // var date = mydate.toString("jj/MM/yyyy");

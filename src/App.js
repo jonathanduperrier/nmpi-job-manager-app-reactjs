@@ -10,7 +10,7 @@ import {
 import logo from './logo.svg';
 import './App.css';
 import ListQueue from './Queue/ListQueue.js';
-import DetailQUeue from './Queue/DetailQueue.js';
+import DetailQueue from './Queue/DetailQueue.js';
 import AddJob from './Queue/AddJob.js';
 import ReSubmitJob from './Queue/ReSubmitJob.js';
 
@@ -42,7 +42,7 @@ function App() {
           <ListQueue />
       </Route>
       <Route path="/detailqueue/:id">
-          <DetailQUeue />
+          <DetailQueue />
       </Route>
       <Route path="/addjob">
           <AddJob />
