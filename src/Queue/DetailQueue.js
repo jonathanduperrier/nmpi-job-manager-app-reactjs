@@ -10,6 +10,7 @@ import {
 
 function DetailQueue() {
   let { id } = useParams(); //impossible with class component
+<<<<<<< HEAD
   const[jobs, setJobs] = useState({objects : []});
 
   useEffect(() => {
@@ -21,10 +22,24 @@ function DetailQueue() {
     };
     fetchData();
   }, []);
+=======
+
+  axios.get('https://raw.githubusercontent.com/jonathanduperrier/nmpi-job-manager-app-reactjs/master/db_' + id + '.json')
+  .then(response => {
+    console.log(response.data.objects[0]);
+    
+    //this.setState({job: response.data.objects[0]});
+    // var mydate = new Date(response.data.objects.date);
+    // var date = mydate.toString("jj/MM/yyyy");
+    // console.log("date : " + date);
+    // this.setState({date: date});
+  });
+>>>>>>> 0c153733cdfda17140d8f36627b5c002f68dfdb5
 
   return(
     <div>
       <h2>Job {id}</h2>
+<<<<<<< HEAD
         {jobs.objects.map(job => (
           <div>
             <p>
@@ -46,6 +61,9 @@ function DetailQueue() {
             </div>
           </div>
       ))}
+=======
+
+>>>>>>> 0c153733cdfda17140d8f36627b5c002f68dfdb5
     </div>
   );
 }
